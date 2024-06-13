@@ -51,6 +51,6 @@ export async function getFilePath(val: string, time: number): Promise<string> {
     if (month < 10) {
         month = `0${month}`;
     }
-    return `${year}/${month}/${fileName}`
+    return `gallery/${fileName}`
 
 }

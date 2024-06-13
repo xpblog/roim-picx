@@ -105,7 +105,7 @@ router.post('/upload', auth, async (req: Request, env: Env) => {
         const header = new Headers()
         header.set("content-type", fileType)
         header.set("content-length", `${item.size}`)
-        const object = await env.R2.put("gallery/", item.stream(), {
+        const object = await env.R2.put(objecPath, item.stream(), {
             httpMetadata: header,
         }) as R2Object
         if (object || object.key) {
